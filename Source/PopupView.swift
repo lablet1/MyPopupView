@@ -322,7 +322,7 @@ public struct Popup<PopupContent: View>: ViewModifier {
                 return (screenHeight - sheetContentRect.height)/2 - safeAreaInsets.top
             }
             if position.isBottom {
-                return screenHeight - sheetContentRect.height + keyboardHeightHelper.keyboardHeight - verticalPadding + (useSafeAreaInset ? -safeAreaInsets.bottom : 0) - safeAreaInsets.top
+                return screenHeight - sheetContentRect.height - keyboardHeightHelper.keyboardHeight - verticalPadding + (useSafeAreaInset ? -safeAreaInsets.bottom : 0) - safeAreaInsets.top
             }
         }
 
@@ -333,7 +333,7 @@ public struct Popup<PopupContent: View>: ViewModifier {
             return (presenterContentRect.height - sheetContentRect.height)/2
         }
         if position.isBottom {
-            return presenterContentRect.height - sheetContentRect.height + keyboardHeightHelper.keyboardHeight + safeAreaInsets.bottom - verticalPadding + (useSafeAreaInset ? -safeAreaInsets.bottom : 0)
+            return presenterContentRect.height - sheetContentRect.height - keyboardHeightHelper.keyboardHeight + safeAreaInsets.bottom - verticalPadding + (useSafeAreaInset ? -safeAreaInsets.bottom : 0)
         }
         return 0
     }
