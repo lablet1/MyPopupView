@@ -450,7 +450,7 @@ public struct Popup<PopupContent: View>: ViewModifier {
                 .onChange(of: targetCurrentOffset) { newValue in
                     if !shouldShowContent, newValue == hiddenOffset { // don't animate initial positioning outside the screen
                         actualCurrentOffset = newValue
-                    } else {
+                    } else  if actualCurrentOffset != newValue{
                         withAnimation(animation) {
                             actualCurrentOffset = newValue
                         }
